@@ -34,5 +34,3 @@ async def on_ready():
 	await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name =f"{bot.command_prefix}help"))
 
 bot.run(token)
-
-# sebe sucks balls 
