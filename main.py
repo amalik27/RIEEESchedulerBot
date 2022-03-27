@@ -21,7 +21,7 @@ import discord
 # import time
 import os
 
-TOKEN = 'OTU3MzUyNDQzNjYwODgyMDIw.Yj9h8Q.detpUGrH4oU0Gcp28ycS3mVQ4gQ' # discord bot token
+TOKEN = "OTU3Mzg5MDY3OTI0OTM0NjY2.Yj-EDQ.kV3VcBA66rQPKqQXNwjS-MCrFio" # discord bot token
 
 client = discord.Client()
 
