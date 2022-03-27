@@ -30,15 +30,17 @@ channel_id = '957476426632798208' # set it to proper channel ID
 async def on_ready():
     print('Scheduler Bot: Up and ready for action!')
 
-@tasks.loop(days=1)
+# @tasks.loop(days=1)
 async def alarm_message():
     await client.wait_until_ready()
-    channel = client.get_channel(channel_id)
-    message = 'test'
-    await channel.send(message)
-    
-    alarm_message.start()
-	
+    while not client.is_closed:
+        channel = client.get_channel(channel_id)
+        messages = ('test')
+        await client.send_message(channel, messages)
+        await asyncio.sleep(5) #runs every 5 seconds
+
+client.loop.create_task(alarm_message())
+
 client.run(TOKEN)
 
 # @client.event
