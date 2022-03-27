@@ -42,11 +42,15 @@ async def alarm_message():
 @client.event
 async def on_message(message):
 
-    time = datetime.datetime.today()
-
-    if message.author == client.user:
-        return
-    elif message.content.startswith('!schedule {time.hour}:{time.minute}'):
-        await client.get_channel(channel_id).send(f"It is {time.hour}:{time.minute}!")
-
-    client.run(TOKEN)
+	if time.hour == 8:
+		if time.minute == 30: # The discord bot here comes and grabs the channel id and sends a random message of yours!
+			await client.get_channel(channel_id).send(f"It is {time.hour}:{time.minute}!")
+	while True:
+		time = datetime.datetime.today()
+	
+	if message.author == client.user:
+			return
+	elif message.content.startswith('!schedule {time.hour}:{time.minute}'):
+			await client.get_channel(channel_id).send(f"It is {time.hour}:{time.minute}!")
+				
+			client.run(TOKEN)
