@@ -3,6 +3,7 @@ import asyncio
 from discord.ext import commands
 from discord.ext import tasks
 import time
+from apscheduler.schedulers.blocking import BlockingScheduler
 # import os
 # import datetime
 
@@ -38,6 +39,18 @@ async def on_message(message):
 	if message.content.startswith('!stop'):
 		alarm_message.stop()
 		await message.channel.send('man fuck abdul!')
+
+@client.event
+async def job_function():
+    print("First Event")
+
+sched = BlockingScheduler()
+
+# Schedules job_function to be run on the third Friday
+# of June, July, August, November and December at 00:00, 01:00, 02:00 and 03:00
+sched.add_job(job_function, 'cron', month='6-8,11-12', day='3rd fri', hour='0-3')
+
+sched.start()
 
 client.run(TOKEN)
 
