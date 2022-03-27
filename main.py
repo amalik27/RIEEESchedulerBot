@@ -42,8 +42,8 @@ async def alarm_message():
 @client.event
 async def on_message(message):
 
-	if time.hour == 8:
-		if time.minute == 30: # The discord bot here comes and grabs the channel id and sends a random message of yours!
+	if time.hour == 12:
+		if time.minute == 43: # The discord bot here comes and grabs the channel id and sends a random message of yours!
 			await client.get_channel(channel_id).send(f"It is {time.hour}:{time.minute}!")
 	while True:
 		time = datetime.datetime.today()
