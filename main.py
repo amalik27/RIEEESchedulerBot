@@ -38,4 +38,4 @@ async def on_message(message):
 	elif message.content.startswith('!schedule'):
 		await message.channel.send('You got it!')
 
-client.run(TOKEN)
+client.run(os.getenv(TOKEN))
