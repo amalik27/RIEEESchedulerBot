@@ -19,7 +19,7 @@ import discord
 # import asyncio
 # import datetime
 # import time
-import os
+# import os
 
 TOKEN = "OTU3Mzg5MDY3OTI0OTM0NjY2.Yj-EDQ.kV3VcBA66rQPKqQXNwjS-MCrFio" # discord bot token
 
@@ -29,7 +29,7 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-    print('{0.user}]: Up and ready for action!'.format.client)
+    print("{0.user}: Up and ready for action!".format.client)
 
 @client.event
 async def on_message(message):
