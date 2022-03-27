@@ -6,11 +6,11 @@ import time
 # import os
 # import datetime
 
-TOKEN = 'OTU3Mzg5MDY3OTI0OTM0NjY2.Yj-EDQ.3Ld43lvx2v3qk1DVYSxrDyHwTks'  # discord bot token
+TOKEN = 'OTU3Mzg5MDY3OTI0OTM0NjY2.Yj-EDQ.oIe39LR-SVXOrEqeA2SaiNw9vr I'  # discord bot token
 
 client = discord.Client()
 
-channel_id = '957476426632798208'  # set it to proper channel ID
+channel_id = 957476426632798211  # set it to proper channel ID
 
 
 @client.event
@@ -23,17 +23,21 @@ async def alarm_message():
 
     await client.wait_until_ready()
     channel = client.get_channel(channel_id)
-
+    # await client.send_message(discord.Object(channel_id), 'I am going to send a message every 5 seconds!')
     await channel.send('I am going to send a message every 5 seconds!')
 
 
 @client.event
 async def on_message(message):
-
+	
 	if message.author == client.user:
 		return
-	if message.content.startswith('!schedule'):
+	if message.content.startswith('!timer'):
 		alarm_message.start()
+		await message.channel.send('I will start sending a message every 5 seconds!')
+	if message.content.startswith('!stop'):
+		alarm_message.stop()
+		await message.channel.send('man fuck abdul!')
 
 client.run(TOKEN)
 
