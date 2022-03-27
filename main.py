@@ -21,7 +21,7 @@ import discord
 # import time
 # import os
 
-TOKEN = 'OTU3Mzg5MDY3OTI0OTM0NjY2.Yj-EDQ.kV3VcBA66rQPKqQXNwjS-MCrFio' # discord bot token
+TOKEN = 'OTU3Mzg5MDY3OTI0OTM0NjY2.Yj-EDQ.goc40Ay9l-LhzgOzfTDxQ5pOSg8' # discord bot token
 
 client = discord.Client()
 
@@ -29,7 +29,7 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-    print('{0.user}: Up and ready for action!'.format.client)
+    print('{0.user}: Up and ready for action!'.format(client))
 
 @client.event
 async def on_message(message):
